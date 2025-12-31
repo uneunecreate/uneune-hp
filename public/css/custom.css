@@ -1,0 +1,16 @@
+ステップ 1: カスタムCSSファイル/* ロゴ画像の枠線を非表示にするCSS */
+.intro-header .avatar-img {
+    border: none !important;
+}
+
+/* フッターのSNSアイコンの丸い枠線を非表示にするCSS */
+.list-inline-item .fa-stack {
+    border: none !important;
+    background-color: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* SNSアイコンの丸い背景色も透明にする */
+.list-inline-item .fa-stack-2x {
+    color: inherit !important; /* 親要素の色を継承 */
+}
