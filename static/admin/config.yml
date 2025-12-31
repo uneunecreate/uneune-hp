@@ -1,0 +1,21 @@
+backend:
+  name: git-gateway
+  branch: main # 自分のリポジトリのブランチ名に合わせる
+
+# 画像の保存先設定
+media_folder: "static/img" # アップロードした画像の保存先
+public_folder: "/img"      # サイト上での画像URLパス
+
+# 編集画面の設定
+collections:
+  - name: "post"        # CMS内部での名前
+    label: "ブログ記事"  # 画面に表示される名前
+    folder: "content/post" # 編集対象のフォルダ
+    create: true         # 新規作成を許可
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # ファイル名の規則
+    fields:
+      - { label: "タイトル", name: "title", widget: "string" }
+      - { label: "公開日", name: "date", widget: "datetime" }
+      - { label: "説明(概要)", name: "description", widget: "string", required: false }
+      - { label: "本文", name: "body", widget: "markdown" }
+      - { label: "下書き", name: "draft", widget: "boolean", default: false }
